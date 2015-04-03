@@ -1,0 +1,115 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+.main {
+	width: 100vh;
+	color:#141414;
+}
+	.main .top {
+		width: 100vw;
+		height: 10vh;
+		background-color:#f2f1f0;
+		border-bottom:1px solid #c0c0c0;
+	}
+		.main .top .logo {
+			line-height: 10vh;
+			width: 10vw;
+			height: 10vh;
+			float:left;
+			font-weight: bold;
+			text-align: center;
+			font-size: 3vw;
+		}
+		.main .top .actions {
+			width: 90vw;
+			height: 10vh;
+			float: left;
+		}
+			.main .top .actions .search-query {
+				float:left;
+				margin-top: 1vh;
+				margin-bottom: 1vh;
+				height: 8vh;
+				font-size:2vh;
+				width:80vw;
+				border:1px solid #c0c0c0;
+				padding-left: 2vw;
+			}
+			.main .top .actions .run-search {
+				float: left;
+				border:1px solid #4d90fe;
+				background-color: #4d90fe;
+				color: #fff;
+				font-weight: bold;
+				margin-top: 1vh;
+				margin-bottom: 1vh;
+				font-size: 2vw;
+				height: 8vh;
+				width: 10vw;
+				cursor: pointer;
+			}
+/*------------------------------------------------------------------------BOTTOM*/
+	.main .bottom {
+		width: 100vw;
+		height: 90vh;
+		overflow-y: scroll; 
+	}
+		.main .bottom .r {
+			width: 60vw;
+			float:left;
+			margin-left: 10vw;
+		}
+			.main .bottom .r .item {
+				padding: 2vh 2vw;
+			}
+				.main .bottom .r .rslist {
+
+				}
+					.main .bottom .r .rslist .item .title {
+						font-size: 2vh;
+						font-weight: bold;
+						color:#1a0dba;
+						cursor: pointer;
+					}
+						.main .bottom .r .rslist .item .title:hover{
+							text-decoration: underline;
+						}
+					.main .bottom .r .rslist .item .url {
+						font-size: 2vh;
+						color:#2f663c;
+					}
+					.main .bottom .r .rslist .item .short-text {
+						font-size: 2vh;
+						color:#545454;
+					}
+		.main .bottom .l {
+			-webkit-border-radius: 0px 0px 0px 20px;-moz-border-radius: 0px 0px 0px 20px;border-radius: 0px 0px 0px 20px;
+			width: 25vw;
+			padding: 1vh 1vw;
+			background-color: #f2f1f0;
+			float:left;
+			color:#7d7c7a;  
+			min-width: 114px;
+		}
+			.main .bottom .l ul {
+				margin-left: 5px;
+				list-style-type: none;
+			}
+				.main .bottom .l ul li select {
+					margin-top: 2px;
+					margin-bottom: 10px;
+					border:1px solid #c0c0c0;
+					padding: 4px 6px;
+					cursor: pointer;
+				}
