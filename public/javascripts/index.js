@@ -7,4 +7,12 @@ function newLinksItem(item){
 }
 $(document).ready(function(){
 	$('select').select2();
+	$.ajax({
+		url: '/common-languages/lg.json'
+	}).done(function(lg){
+		var builder='';
+		for(var i=0; i<lg.length; i++) builder += '<option value="'+lg[i].code+'">'+lg[i].name+'</option>';
+		$('.languages').html(builder);
+		$('select').select2();
+	});
 });

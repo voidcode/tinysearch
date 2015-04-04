@@ -1,0 +1,14 @@
+{
+  "name": "common-languages",
+  "homepage": "https://github.com/voidcode/common-languages",
+  "_release": "5e4d0ca216",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5e4d0ca216f22178b8510c7328e217b767dc012f"
+  },
+  "_source": "git://github.com/voidcode/common-languages.git",
+  "_target": "*",
+  "_originalSource": "common-languages",
+  "_direct": true
+}
