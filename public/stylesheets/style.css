@@ -94,21 +94,24 @@ a {
 						color:#545454;
 					}
 		.main .bottom .l {
-			-webkit-border-radius: 0px 0px 0px 20px;-moz-border-radius: 0px 0px 0px 20px;border-radius: 0px 0px 0px 20px;
-			width: 25vw;
+			-webkit-border-radius: 0px 0px 10px 10px;-moz-border-radius: 0px 0px 10px 10px;border-radius: 0px 0px 10px 10px;
 			padding: 1vh 1vw;
 			background-color: #f2f1f0;
 			float:left;
 			color:#7d7c7a;  
 			min-width: 114px;
+			padding-bottom: 5px;
 		}
 			.main .bottom .l ul {
-				margin-left: 5px;
 				list-style-type: none;
 			}
-				.main .bottom .l ul li select {
-					margin-top: 2px;
+				.main .bottom .l ul li .input {
+					width:160px;
 					margin-bottom: 10px;
+				}
+				.main .bottom .l ul li select {
+					width:20px;
+					margin-top: 2px;
 					border:1px solid #c0c0c0;
 					padding: 4px 6px;
 					cursor: pointer;

@@ -1,9 +1,16 @@
 <!doctype html>
 <html>
 	<head>
-		<title>TS - TinySearch</title>
+		<title> - TinySearch</title>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
-		<script src="/jquery/dist/jquery.min.js"></script>
+		<script src="/jquery/jquery.min.js"></script>
+		<!-- jquery-mobile -->
+		<script src="/jquery-mobile/js/jquery.mobile.data.js"></script>
+		<link rel="stylesheet" type="text/css" href="/jquery-mobile/css/themes/default/jquery.mobile.css"/>
+		<!-- select2 -->
+		<script src="/select2/select2.js"></script>
+		<link rel="stylesheet" type="text/css" href="/select2/select2.css"/>
+		<!-- curstom js -->
 		<script src="/javascripts/index.js"></script>
 	</head>
 	<body>
@@ -107,7 +114,7 @@
 					<ul>
 						<li>Pagerank</li>
 						<li>
-							<select>
+							<select class="input">
 								<option>10</option>
 								<option>9</option>
 								<option>8</option>
@@ -121,28 +128,28 @@
 								<option>0</option>
 							</select>
 						</li>
-						<li>Creation date</li>
+						<li>Link created-date</li>
 						<li>
-							<input type="date" placeholder="" />
+							<input type="date" class="input" data-role="date"/>
 						</li>
 						<li>Languages</li>
 						<li>
-							<select>
+							<select class="input">
 								<option>DA</option>
 							</select>
 						</li>
 						<li>Mediatypes</li>
 						<li>
-							<select>
+							<select class="input">
 								<option>Websites</option>
 								<option>Images</option>
 							</select>
 						</li>
 						<li>Providers</li>
 						<li>
-							<select>
-								<option>Localhost</option>
-								<option>Google</option>
+							<select  multiple="multiple" placeholder="Providers" class="input">
+								<option selected="selected">Localhost</option>
+								<option selected="selected">Google</option>
 								<option>Wikipedia</option>
 								<option>Twitter</option>
 								<option>Wikileaks</option>
