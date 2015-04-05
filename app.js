@@ -13,6 +13,7 @@ app.engine('html', require('ejs').__express);
 app.set('view engine', 'ejs');
 
 var users = require('./routes/users');
+var links = require('./routes/links');
 var index = require('./routes/index');
 
 // uncomment after placing your favicon in /public
@@ -25,8 +26,49 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));//use public folder
 app.use(express.static(path.join(__dirname, 'bower_components')));//use bower_components folder
 
-app.use('/users', users);
 app.use('/', index);
+app.use('/users', users);
+
+
+var suggest = require('suggestion');
+app.use('/suggestion', function (req, res, next){
+	var q = req.query.q;
+	suggest(q, function (err, suggestions){
+		if(err) res.status(404);
+		else res.json(suggestions);
+	});
+});
+
+var google = require('google');
+var wikipedia = require('wikipedia-js');
+app.use('/links', function(req, res, next){
+	var q = req.query.q;
+
+
+	//wikipedia-js
+	var options = {query: q, format: "json", summaryOnly: true};
+	wikipedia.searchArticle(options, function(err, htmlWikiText){
+	    if(err){
+	      console.log("wikipedia An error occurred[query=%s, error=%s]", q, err);
+	    }
+	    console.log("wikipedia Query successful[query=%s, html-formatted-wiki-text=%s]", q, htmlWikiText);
+    });
+
+	//google
+	google.resultsPerPage = 3;
+	google(q, function(err, next, links){
+		if(err) res.status(404);
+		else {
+      var linksBuilder = [];
+      for(var i=0; i<links.length; i++){
+        if(links[i].link != null) linksBuilder[i] = links[i];
+      }
+      res.json(linksBuilder);
+    }
+	});
+});
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

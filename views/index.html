@@ -1,5 +1,4 @@
 <!doctype html>
-<html>
 	<head>
 		<title>TinySearch</title>
 		<link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
@@ -10,57 +9,51 @@
 		<!-- select2 -->
 		<script src="/select2/select2.js"></script>
 		<link rel="stylesheet" type="text/css" href="/select2/select2.css"/>
+
+		<link rel="stylesheet" type="text/css" href="/jquery-ui/themes/base/jquery.ui.autocomplete.css"/>
+		<script src="/jquery-ui/ui/jquery.ui.autocomplete.js"></script>
+
 		<!-- curstom js -->
 		<script src="/javascripts/index.js"></script>
 	</head>
 	<body>
 		<div class="main">
+			<div class="popup-panel hidden">
+				<div class="inner">
+					<ul>
+						<li>
+							<h1>SETTINGS SETUP</h1>
+						</li>
+						<li>
+							<div class="title">Google results per-search</div>
+						</li>
+						<li>
+							<input type="number" value="3" min="0" class="input" placeholder="NumberOfGoogleResults"/>
+						</li>
+						<li>
+							<div class="title">Wikipedia results per-search</div>
+						</li>
+						<li>
+							<input type="number" value="2" min="0" class="input" placeholder="NumberOfWikipediaResults"/>
+						</li>
+						<li>
+							<input type="button" class="save-settings" value="Save global settings"/>
+						</li>
+					</ul>
+				</div>
+			</div>
 			<div class="top">
 				<div class="logo">
 					<span>TS</span>
 				</div>
 				<div class="actions">
-					<input type="search" placeholder="Just do a search ..." class="search-query" tapindex="0" />
+					<input type="search" value="fsfs wef w" placeholder="Just do a search ..." class="search-query" tapindex="0" />
 					<input type="button" value="SEARCH" class="run-search" tabindex="0" />
 				</div>
 			</div>
 			<div class="bottom">
 				<div class="r">
-					<div class="rslist">
-						<div class="item" tabindex="0">
-							<div class="title">DFDF - What does DFDF stand for?</div>
-							<div class="url">acronyms.thefreedictionary.com/DFDF</div>
-							<div class="short-text">What does DFDF stand for? Definition of DFDF in the list of acronyms and abbreviations provided by the Free Online Dictionary and Thesaurus.</div>
-							<div class="actions">
-								<div class="btns remove-this-site">Remove</div>
-								<div class="btns follow-this-site">Follow this site?</div>
-								<div class="btns local-pagerank-up"></div>
-								<div class="btns local-pagerank-down"></div>
-							</div>
-						</div>
-						<div class="item" tabindex="0">
-							<div class="title">DFDF - What does DFDF stand for?</div>
-							<div class="url">acronyms.thefreedictionary.com/DFDF</div>
-							<div class="short-text">What does DFDF stand for? Definition of DFDF in the list of acronyms and abbreviations provided by the Free Online Dictionary and Thesaurus.</div>
-							<div class="actions">
-								<div class="btns remove-this-site">Remove</div>
-								<div class="btns follow-this-site">Follow this site?</div>
-								<div class="btns local-pagerank-up"></div>
-								<div class="btns local-pagerank-down"></div>
-							</div>
-						</div>
-						<div class="item" tabindex="0">
-							<div class="title">DFDF - What does DFDF stand for?</div>
-							<div class="url">acronyms.thefreedictionary.com/DFDF</div>
-							<div class="short-text">What does DFDF stand for? Definition of DFDF in the list of acronyms and abbreviations provided by the Free Online Dictionary and Thesaurus.</div>
-							<div class="actions">
-								<div class="btns remove-this-site">Remove</div>
-								<div class="btns follow-this-site">Follow this site?</div>
-								<div class="btns local-pagerank-up"></div>
-								<div class="btns local-pagerank-down"></div>
-							</div>
-						</div>
-					</div>
+					<div class="rslist"></div>
 				</div>
 				<div class="l">
 					<h1>Limit by</h1>
@@ -101,10 +94,9 @@
 						<li>Providers</li>
 						<li>
 							<select  multiple="multiple" placeholder="Providers" class="input">
-								<option selected="selected">localhost</option>
-								<option selected="selected">wikipedia.org</option>
-								<option selected="selected">tinysearch.com</option>
+								<option selected="selected">localhost:3666</option>								
 								<option selected="selected">google.com</option>
+								<option selected="selected">wikipedia.org</option>
 								<option>youtube.com</option>
 								<option>twitter.com</option>
 								<option>wikileaks.org</option>
