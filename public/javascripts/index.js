@@ -22,25 +22,24 @@ function runSearch(){
 	}
 	var searchquery = $('.search-query');
 	if(searchquery.val().length > 0){
-		$.ajax({
+		var ajaxObj = $.ajax({
 			url: '/links',
 			data: {
 				q: String(searchquery.val())
 			}, 
 			statusCode: {
-				304: function (){
-					debugger;
-					showNoReslutItem();
+				200: function (links){
+					if(links.length >0){
+						$('.rslist').html('');
+						for(var i=0; i<links.length; i++){
+							if(links[i].link != null) $('.rslist').append( newLinksItem(links[i]) );
+						}
+					} else showNoReslutItem();
+					//if(304 == ajaxObj.status) alert('304');
 				}
 			}
-		}).done(function(links){
-			if(links.length >0){
-				$('.rslist').html('');
-				for(var i=0; i<links.length; i++){
-					if(links[i].link != null) $('.rslist').append( newLinksItem(links[i]) );
-				}
-			} else showNoReslutItem();
 		});
+		ajaxObj;
 	} else {
 		searchquery.addClass('error-input');
 		setTimeout(function(){
@@ -58,7 +57,7 @@ $(document).ready(function(){
 		url: '/common-languages/lg.json'
 	}).done(function(lg){
 		var builder='';
-		for(var i=0; i<lg.length; i++) builder += '<option value="'+lg[i].code+'">'+lg[i].name+'</option>';
+		for(var i=0; i<lg.length; i++) builder += '<option value="'+lg[i].code+'">'+lg[i].name+' (.'+lg[i].code.toLowerCase()+')</option>';
 		$('.languages').html(builder);
 		$('select').select2();
 	});

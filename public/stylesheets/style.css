@@ -35,7 +35,7 @@ a {
 		background-color: #f2f1f0;
 	}
 		.main .popup-panel .inner {
-			margin:5vh 5vw;
+			margin:5vh 10vw;
 		}
 			.main .popup-panel .inner ul {
 			}
@@ -51,7 +51,7 @@ a {
 				.main .popup-panel .inner ul li .input {
 					padding: 1vh 1vw;
 					margin-bottom:1vh;
-					width: 6vw;
+					width: 43vw;
 				}
 				.main .popup-panel .inner ul li .save-settings {
 					  float: left;
@@ -205,7 +205,7 @@ a {
 				color:#7d7c7a;  
 				min-width: 114px;
 				padding-bottom: 10px;
-			}			
+			}
 		}	
 		@media (max-width: 640px) {	
 			.main .bottom .l {
@@ -218,7 +218,14 @@ a {
 				border-top:1px solid #c0c0c0;
 				padding-bottom: 10px;
 				height: 100%;
-			}
+			}		
+				.main .bottom .l h1 {
+					width: 100vw;
+					text-align: center;
+					margin-top: 2vh;
+					font-size: 12vw;
+					margin-bottom: 2vh;
+				}	
 				.main .bottom .l ul {
 					margin-left: auto;
 					margin-right: auto;

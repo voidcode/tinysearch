@@ -4,9 +4,20 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var orm = require('orm');
 var app = express();
 
+
+//defined db-models
+/*
+app.use(orm.express('', {
+  defined: function (db, models, next){
+    models.links = db.defined('links', {
+      next();
+    });
+  }
+}));
+*/
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('html', require('ejs').__express);
@@ -30,6 +41,8 @@ app.use('/', index);
 app.use('/users', users);
 
 
+
+//google suggestion
 var suggest = require('suggestion');
 app.use('/suggestion', function (req, res, next){
 	var q = req.query.q;
@@ -39,6 +52,7 @@ app.use('/suggestion', function (req, res, next){
 	});
 });
 
+//links
 var google = require('google');
 var wikipedia = require('wikipedia-js');
 app.use('/links', function(req, res, next){
@@ -101,5 +115,15 @@ app.use(function(err, req, res, next) {
   });
 });
 
+//SET LOCAL host with http://tinysearch.com
+var hostile = require('hostile');
+hostile.set('localhost', 'tinysearch.com', function (err){
+  if(err) console.log('ERROR: hostile /etc/hosts is NOT set!!');
+  else console.log('hostile has set /etc/hosts file to: http://tinysearch.com/ -> localhost');
+});
+hostile.set('localhost', 'tinysearch.org', function (err){
+  if(err) console.log('ERROR: hostile /etc/hosts is NOT set!!');
+  else console.log('hostile has set /etc/hosts file to: http://tinysearch.org/ -> localhost');
+});
 
 module.exports = app;

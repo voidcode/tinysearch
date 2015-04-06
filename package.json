@@ -17,6 +17,8 @@
     "ejs": "*",
     "google": "*",
     "wikipedia-js": "*",
-    "suggestion": "*"
+    "suggestion": "*",
+    "orm": "*",
+    "hostile":"*"
   }
 }
