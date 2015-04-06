@@ -1,6 +1,6 @@
 #####Tinysearch
 
-####ALPHA / NOT DONE YET!!!
+####ALPHA / Do NOT use it YET!!!
 
 
 This project can search providers: google, wikipedia, youtube ...
