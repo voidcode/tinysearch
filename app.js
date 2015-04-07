@@ -151,6 +151,15 @@ app.use('/links', function(req, res, next){
                   url: links[i].href 
                 }, function(err, Links){ 
                   if(!err) console.log('Link fund! -->links['+i+'].href-->'+JSON.stringify(links[i]));
+                  else {
+                    req.models.Links.create({ 
+                      createat: new Date(),
+                      title: links[i].title,
+                      url: links[i].href
+                    }, function(err, items){
+                      if(err) console.error(err);
+                    });  
+                  }
                 });
               }
             }
