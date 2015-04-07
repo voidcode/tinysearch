@@ -132,6 +132,7 @@ a {
 				text-align: center;
 				color:#7d7c7a;
 				font-weight: bold;
+				white-space: nowrap;
 			}
 				.main .bottom .r .rslist {
 

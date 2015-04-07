@@ -19,6 +19,8 @@
     "wikipedia-js": "*",
     "suggestion": "*",
     "orm": "*",
-    "hostile":"*"
+    "mysql": "*",
+    "hostile":"*",
+    "lodash":"*"
   }
 }
